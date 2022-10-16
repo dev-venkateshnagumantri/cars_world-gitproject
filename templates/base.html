@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" id="style_sheet" href="{% static 'css/skins/red.css'%}">
 
     <!-- Favicon icon -->
-    <link  rel="shortcut icon" href="{% static 'img/logos/favicon.ico' %}" type="image/Icon">
+    <link  rel="shortcut icon" href="{% static 'img/favicon_1.ico' %}" >
  
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
@@ -57,8 +57,8 @@
 <!-- Full Page Search -->
 <div id="full-page-search">
     <button type="button" class="close">×</button>
-    <form action="https://storage.googleapis.com/theme-vessel/carhouse/index.html#" class="search-header">
-        <input type="search" value="" placeholder="type keyword(s) here. Eg: audi, benz etc" />
+    <form action="{% url 'cars:search' %}" class="search-header">
+        <input type="search" value="" placeholder="type keyword(s) here. Eg: audi, benz etc"  name="keyword"/>
         <button type="submit" class="btn btn-sm button-theme">Search</button>
     </form>
 </div>
