@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
+from django.core.validators import MinValueValidator,MaxValueValidator
 # Create your models here.
 class Car(models.Model):
     state_choices=(
@@ -10,7 +11,7 @@ class Car(models.Model):
         ('AS','Assam'),
         ('BR','Bihar'),
         ('CH','Chhattisgarh'),
-        ('GA','Goa'),
+        ('GOA','Goa'),
         ('GJ','Gujarat'),
         ('HAR','Haryana'),
         ('HP','Himachal Pradesh'),
@@ -73,7 +74,7 @@ class Car(models.Model):
     model=models.CharField(max_length=100)
     year=models.IntegerField(('year'),choices=year_choices)
     condition=models.CharField(max_length=100)
-    price=models.IntegerField()
+    price=models.IntegerField(validators=[MinValueValidator(100000)])
     description=RichTextField()
     car_photo=models.ImageField(upload_to='photos/%Y/%m/%d/')
     car_photo_1=models.ImageField(upload_to='photos/%Y/%m/%d/')
@@ -84,7 +85,7 @@ class Car(models.Model):
     body_style=models.CharField(max_length=100)
     engine=models.CharField(max_length=100)
     transmission=models.CharField(max_length=100)
-    interior=models.CharField(max_length=100)
+    interior_color=models.CharField(max_length=100)
     miles=models.IntegerField()
     doors=models.CharField(choices=door_choices,max_length=100)
     passengers=models.IntegerField()
