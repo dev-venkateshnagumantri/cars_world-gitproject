@@ -37,6 +37,13 @@ class Car(models.Model):
         ('WB','West Bengal')
 
     )
+    door_choices = (
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+        ('6', '6'),
+    )
 
     features_choices = (
         ('Cruise Control', 'Cruise Control'),
@@ -52,14 +59,6 @@ class Car(models.Model):
         ('Auto Start/Stop', 'Auto Start/Stop'),
         ('Wind Deflector', 'Wind Deflector'),
         ('Bluetooth Handset', 'Bluetooth Handset'),
-    )
-
-    door_choices = (
-        ('2', '2'),
-        ('3', '3'),
-        ('4', '4'),
-        ('5', '5'),
-        ('6', '6'),
     )
 
     year_choices = []
@@ -81,7 +80,7 @@ class Car(models.Model):
     car_photo_2=models.ImageField(upload_to='photos/%Y/%m/%d/')
     car_photo_3=models.ImageField(upload_to='photos/%Y/%m/%d/')
     car_photo_4=models.ImageField(upload_to='photos/%Y/%m/%d/')
-    features= MultiSelectField(choices=features_choices)
+    features = MultiSelectField(choices = features_choices)
     body_style=models.CharField(max_length=100)
     engine=models.CharField(max_length=100)
     transmission=models.CharField(max_length=100)

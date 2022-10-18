@@ -1,14 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Team
 from cars.models import Car
-from heapq import *
+from django.contrib import messages,auth
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 def home(request):
 
     featured_cars=Car.objects.all().order_by('created_date','-price').filter(is_featured=True)
     totalcars_list = Car.objects.all().order_by('-created_date')
-
     model_search = Car.objects.values_list('model',flat=True).distinct()
     city_search = Car.objects.values_list('city',flat=True).distinct()
     year_search = Car.objects.values_list('year',flat=True).distinct().order_by('year')
@@ -54,11 +55,8 @@ def home(request):
         'model_search':model_search,
         'city_search' : city_search,
         'year_search' : year_search,
-        'body_style_search':body_style_search,
-        
-
+        'body_style_search':body_style_search
     }
-    
     return render(request,'pages/home.html',context=data)
 
 def about(request):
@@ -72,4 +70,55 @@ def  services(request):
 
 def contact(request):
     return render(request,'pages/contact.html')
-    
+
+#for login and register activities#   
+def login(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request,user)
+            messages.success(request,'You are now Logged in !!!')
+            return redirect('pages:dashboard')
+        else:
+            messages.error(request,'entered username or password is incorrect !')
+            return redirect('pages:login')
+    else:
+        return render(request,'pages/login.html')
+
+def register(request):
+
+    if request.method=='POST':
+        firstname=request.POST['firstname']
+        lastname=request.POST['lastname']
+        username=request.POST['username']
+        email=request.POST['email']
+        password=request.POST['password']
+        confirm_password=request.POST['confirm_password']
+        if password==confirm_password:
+            if User.objects.filter(username=username).exists():
+                messages.error(request,'Username already exists, Try using different one ! ')
+                return redirect('pages:register')
+            elif User.objects.filter(email=email).exists():
+                messages.error(request,'OOPS! entered email already exists, Try another one.')
+                return redirect('pages:register')
+            else:
+                user = User.objects.create_user(first_name=firstname,last_name=lastname,username=username,email=email,password=password)
+                user.save()
+                auth.login(request,user)
+                messages.success(request,'You are successfully registered and logged in !')
+                return redirect('pages:dashboard')
+        else:
+            messages.error(request,'password and confirm password fields do not match !')
+            return redirect('pages:register')
+    else:
+        return render(request,'pages/register.html')
+
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+    return redirect('pages:home')
+
+def dashboard(request):
+    return render(request,'pages/dashboard.html')

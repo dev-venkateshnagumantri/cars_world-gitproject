@@ -1,9 +1,10 @@
- {%extends 'base.html'%}
+ {% extends 'base.html' %}
 
- {%block content%}
+{% block title %}| Your Search Result{% endblock %}
+{% block content %}
+{% load humanize %}
+{% load static %}
 
-{%load static%}
-{%load humanize%}
 <!-- Banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -206,4 +207,4 @@
 </div>
 <!-- Featured car end -->
 
- {%endblock%}
+ {% endblock %}
