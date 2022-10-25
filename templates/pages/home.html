@@ -15,8 +15,8 @@
                 <img class="d-block w-100 h-100" src=" {% static 'img/car-1.jpg' %} " alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Wow Factor Standard</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
+                    <h5><b>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</b></h5>
                     <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
@@ -24,24 +24,33 @@
                 <img class="d-block w-100 h-100" src=" {% static 'img/car-2.jpg' %} " alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Explore Your Dream Car</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
+                    <h5><b>We understand how much intense your dream is<br>
+                        but believe us, this will be your final search</b></h5>
                     <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
-                <img class="d-block w-100 h-100" src=" {% static 'img/car-3.jpg' %} " alt="banner">
+                <img class="d-block w-100 h-100" src=" {% static 'img/car-6.jpg' %} " alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>We Are Wheel</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
+                    <h5><b>We drive you and We are with you<br>
+                        just relax and explore us<br></b></h5>
+                    <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
+                </div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100 h-100" src=" {% static 'img/car-12.jpg' %} " alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>We Are The Best</h3>
+                    <h5><b>Tons of users trust us because<br>
+                        we maintain brand and discount at the same time<br></b></h5>
                     <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
         </div>
         <!-- Search box 3 start -->
         <div class="search-box-4 sb-8">
-            <form action="{% url 'cars:search' %}" method="">
+            <form action="{% url 'pages:search' %}" method="">
                 <div class="form-group">
                     <input type="text" name="keyword" placeholder="Search by name of the car" class="form-control">
                 </div>
@@ -81,7 +90,7 @@
                 </div>
                 <div class="range-slider clearfix">
                                 <label>Price</label>
-                                <div data-min="0" data-max="90000000"  data-min-name="min_price" data-max-name="max_price" data-unit="INR" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                <div data-min="0" data-max="50000000"  data-min-name="min_price" data-max-name="max_price" data-unit="INR" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                 <div class="clearfix"></div>
                             </div>
                 <div class="form-group">
@@ -114,7 +123,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Featured <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5>The cars with huge set of features or latest models will be shown here </h5>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -141,30 +150,30 @@
                                         
                                             <a href="{{car.car_photo.url}}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
-                                                <img class="hidden" src="{{car.car_photo.url}}">
+                                                <img class="hidden" src="{{car.car_photo.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                             </a>
                                 
 
                                             {%if car.car_photo_1 %}
                                             <a href="{{car.car_photo_1.url}}" class="hidden">
-                                                <img class="hidden" src="{{car.car_photo_1.url}}">
+                                                <img class="hidden" src="{{car.car_photo_1.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                             </a>
                                             {%endif%}
 
                                             {%if car.car_photo_2 %}
                                             <a href="{{car.car_photo_2.url}}" class="hidden">
-                                                <img class="hidden" src="{{car.car_photo_2.url}}">
+                                                <img class="hidden" src="{{car.car_photo_2.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                             </a>
                                             {%endif%}
 
                                             {%if car.car_photo_3 %}
                                             <a href="{{car.car_photo_3.url}}" class="hidden">
-                                                <img class="hidden" src="{{car.car_photo_3.url}}">
+                                                <img class="hidden" src="{{car.car_photo_3.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                             </a>
                                             {%endif%}
                                             {%if car.car_photo_4 %}
                                             <a href="{{car.car_photo_4.url}}" class="hidden">
-                                                <img class="hidden" src="{{car.car_photo_4.url}}">
+                                                <img class="hidden" src="{{car.car_photo_4.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                             </a>
                                             {%endif%}
                                         </div>
@@ -174,17 +183,17 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="{% url 'cars:car_detail' car.id %}">{{car.car_title}}</a>
+                                <a href="{% url 'pages:car_detail' car.id %}">{{car.car_title}}</a>
                             </h1>
                             <div class="location">
-                                <a href="{% url 'cars:car_detail' car.id %}">
+                                <a href="{% url 'pages:car_detail' car.id %}">
                                     <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
                                 </a>
                             </div>
                             <ul class="facilities-list clearfix">
                                 <li>{{car.fuel_type}}</li>
                                 <li>{{car.miles|intcomma}} miles</li>
-                                <li>{{car.milege}} km/L</li>
+                                <li>{{car.milege}} km</li>
                                 <li>{{car.body_style}}</li>
                                 <li>{{car.color}}</li>
                                 <li>{{car.year}}</li>
@@ -213,14 +222,14 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Latest <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5>Check out the cars that are posted recently</h5>
         </div>
         <div class="row">
         {% for car in all_cars %}
             <div class="col-lg-4 col-md-6">
                 <div class="car-box">
                     <div class="car-thumbnail">
-                        <a href="car-details.html" class="car-img">
+                        <a href="{% url 'pages:car_detail' car.id%}" class="car-img">
                             <div class="tag">For Sale</div>
                             <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="width:260px; height:260px;">
                             <div class="facilities-list clearfix">
@@ -244,31 +253,31 @@
                                        
                                         <a href="{{car.car_photo.url}}" class="overlap-btn">
                                             <i class="fa fa-expand"></i>
-                                            <img class="hidden" src="{{car.car_photo.url}}">
+                                            <img class="hidden" src="{{car.car_photo.url}} " style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                         </a>
                                     
 
                                         {%if car.car_photo_1 %}
                                         <a href="{{car.car_photo_1.url}}" class="hidden">
-                                            <img class="hidden" src="{{car.car_photo_1.url}}">
+                                            <img class="hidden" src="{{car.car_photo_1.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                         </a>
                                         {%endif%}
 
                                         {%if car.car_photo_2 %}
                                         <a href="{{car.car_photo_2.url}}" class="hidden">
-                                            <img class="hidden" src="{{car.car_photo_2.url}}">
+                                            <img class="hidden" src="{{car.car_photo_2.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                         </a>
                                         {%endif%}
 
                                         {%if car.car_photo_3 %}
                                         <a href="{{car.car_photo_3.url}}" class="hidden">
-                                            <img class="hidden" src="{{car.car_photo_3.url}}">
+                                            <img class="hidden" src="{{car.car_photo_3.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                         </a>
                                         {%endif%}
 
                                         {%if car.car_photo_4 %}
                                         <a href="{{car.car_photo_4.url}}" class="hidden">
-                                            <img class="hidden" src="{{car.car_photo_4.url}}">
+                                            <img class="hidden" src="{{car.car_photo_4.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;">
                                         </a>
                                         {%endif%}
                                     </div>
@@ -278,10 +287,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{% url 'cars:car_detail' car.id %}">{{car.car_title}}</a>
+                            <a href="{% url 'pages:car_detail' car.id %}">{{car.car_title}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{% url 'cars:car_detail' car.id %}">
+                            <a href="{% url 'pages:car_detail' car.id %}">
                                 <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
                             </a>
                         </div>
@@ -309,7 +318,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Executive <span>Team</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <h5>We have diversed set of workers in the team. wait a minute! you can find the real developer in about page.</h5>
         </div>
         <!-- Slick slider area start -->
 
@@ -357,83 +366,5 @@
     </div>
 </div>
 <!-- Intro section end -->
-
-
-
-
-
-<!-- Car Overview Modal -->
-<div class="car-model-2">
-    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="carOverviewModalLabel">
-                        <h4>Explore Your Dream Car</h4>
-                        <h5><i class="flaticon-pin"></i> 123 Kathal St. Tampa City,</h5>
-                    </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row modal-raw">
-                        <div class="col-lg-6 modal-left">
-                            <div class="item active">
-                                <img src="img/car-13.jpg" alt="best-car" class="img-fluid modalLabel-1">
-                                <img src="img/car-14.jpg" alt="best-car" class="img-fluid modalLabel-2">
-                                <div class="sobuz">
-                                    <div class="price-box" style="padding-bottom: 5px;">
-                                        <span class="del-2">$1050.00</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Convertible</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 modal-right">
-                            <div class="modal-right-content">
-                                <section>
-                                    <h3>Features</h3>
-                                    <div class="features">
-                                        <ul class="bullets">
-                                            <li>Cruise Control</li>
-                                            <li>Airbags</li>
-                                            <li>Air Conditioning</li>
-                                            <li>Alarm System</li>
-                                            <li>Audio Interface</li>
-                                            <li>CDR Audio</li>
-                                            <li>Seat Heating</li>
-                                            <li>ParkAssist</li>
-                                        </ul>
-                                    </div>
-                                </section>
-                                <section>
-                                    <h3>Overview</h3>
-                                    <ul class="bullets">
-                                        <li>Model</li>
-                                        <li>Year</li>
-                                        <li>Condition</li>
-                                        <li>Price</li>
-                                        <li>Audi</li>
-                                        <li>2020</li>
-                                        <li>Brand New</li>
-                                        <li>$178,000</li>
-                                    </ul>
-                                </section>
-                                <div class="description">
-                                    <h3>Description</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                                    <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 {% endblock%}

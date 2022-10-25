@@ -23,15 +23,22 @@
         <!-- Main title -->
         <div class="main-title text-center">
             <h1>Contact <span>Us</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <p>Got any Doubt or Want to sell your car? Contact us by filling the form. We will get in touch with you.</p>
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'pages:contact' %}" method="POST" enctype="multipart/form-data">
+            {% include 'includes/messages.html' %}
+            {% csrf_token %}
             <div class="row">
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-md-6 text-left">
                             <div class="form-group name">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name" {%if user.is_authenticated%} value={{user.first_name}} {%endif%} AutoFocus required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="form-group name">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" {% if user.is_authenticated%} value={{user.last_name}} {% endif %} required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -39,16 +46,22 @@
                                 <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="form-group subject">
                                 <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+
+                        
+                        <div class="col-md">
                             <div class="form-group number">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+                            <div id='emailHelp' class='form-text'>&nbsp We'll never share your phone number with anyone else outside </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="col-md-12">
                             <div class="form-group message">
                                 <textarea class="form-control" name="message" placeholder="Write message"></textarea>
@@ -69,7 +82,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Phone:</h5>
-                                <p><a href="#">0477 8556 552</a></p>
+                                <p><a href="#">+91-63XX-922-5X5</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -78,7 +91,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Email:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="#">venkateshnagumantri11@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -87,7 +100,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Web:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="{% url 'pages:about' %}">info@carzone.com</a></p>
                             </div>
                         </div>
                         <div class="ci-box mb-0">

@@ -28,12 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = 'pages:login'
+LOGOUT_URL = 'pages:logout'
+LOGIN_REDIRECT_URL = 'pages:dashboard'
 
 # Application definition
 
 INSTALLED_APPS = [
     'cars.apps.CarsConfig',
-    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.humanize',
-    
+    'social_django',
 
     
 ]
@@ -56,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'cars_world.urls'
@@ -71,12 +75,23 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- Here
+                'social_django.context_processors.login_redirect', # <-- Here
 
                 
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
+
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'cars_world.wsgi.application'
 
@@ -150,3 +165,19 @@ MESSAGE_TAGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#sending email#
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'developervenkatesh2001@gmail.com'
+EMAIL_HOST_PASSWORD = 'jhivrufehbuzajce'
+EMAIL_USE_TLS = True
+
+SOCIAL_AUTH_FACEBOOK_KEY = '912353209741051'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'fcdbf230ecfa9a34d0327ac2921fa8c0'  # App Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '101928602587-h7dhm83ikehk6258joooa9nd46ei4ot5.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'aYHAei7sF8edIcoE'

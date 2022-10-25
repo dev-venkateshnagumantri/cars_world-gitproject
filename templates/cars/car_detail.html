@@ -25,6 +25,7 @@
 <!-- Car details page start -->
 <div class="car-details-page content-area-6">
     <div class="container">
+        {% include 'includes/messages.html' %}
         <div class="row">
             <div class="col-lg-8 col-md-12 col-xs-12">
                 <div class="car-details-section">
@@ -72,27 +73,27 @@
                             <ul class="carousel-indicators car-properties list-inline nav nav-justified">
                                 <li class="list-inline-item active">
                                     <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#carDetailsSlider">
-                                        <img src="{{car_data.car_photo.url}}" class="img-fluid" alt="small-car">
+                                        <img src="{{car_data.car_photo.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-1" data-slide-to="1" data-target="#carDetailsSlider">
-                                        <img src="{{car_data.car_photo_1.url}}" class="img-fluid" alt="small-car">
+                                        <img src="{{car_data.car_photo_1.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-2" data-slide-to="2" data-target="#carDetailsSlider">
-                                        <img src="{{car_data.car_photo_2.url}}" class="img-fluid" alt="small-car">
+                                        <img src="{{car_data.car_photo_2.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-3" data-slide-to="3" data-target="#carDetailsSlider">
-                                        <img src="{{car_data.car_photo_3.url}}" class="img-fluid" alt="small-car">
+                                        <img src="{{car_data.car_photo_3.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-4" data-slide-to="4" data-target="#carDetailsSlider">
-                                        <img src="{{car_data.car_photo_4.url}}" class="img-fluid" alt="small-car">
+                                        <img src="{{car_data.car_photo_4.url}}" style="height: 100% !important; width: 100% !important; object-fit: cover !important;" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
                             </ul>
@@ -115,7 +116,7 @@
                                     <h3 class="heading-2">
                                         Description
                                     </h3>
-                                    <p>
+                                    <p> 
                                         {{car_data.description|safe}}
                                     </p>
                                 </div>
@@ -188,7 +189,7 @@
                             <li>
                                 <span>VIN_number:</span>{{car_data.vin_no}}
                             <li>
-                                <span>Mileage:</span>{{car_data.milege}} km/L
+                                <span>Mileage:</span>{{car_data.milege}} km
                             </li>
 
                             <li>
@@ -211,21 +212,38 @@
                         <div class="modal-content">
                           <div class="contact-dealer modal-header">
                             <!-- <h5 class="modal-title" id="inquiryModalLabel">Contact Dealer</h5> -->
-                            <img src="img/logos/logo-black-white.png">
+                            <center><img src="{% static 'img/logos/logo-black-white.png' %}">
+                            </center>
                             <button type="button" class="close" data-dismiss="modal">
                               <span>&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="#">
+                            <form action="{% url 'contacts:inquiry' %}" method="POST">
+                                {% csrf_token %}
+
+                                {%if user.is_authenticated%}
+
+                                <input type="hidden" name="user_id" value="{{user.id}}">
+
+                                {%else%}
+
+                                <input type="hidden" name="user_id" value="0">
+
+                                {%endif%}
+
+                                <input type="hidden" name="car_id" value="{{car_data.id}}">
+
                                 <div class="form-group">
                                   <label for="name" class="col-form-label">Hello, My Name is</label>
                                   <div class="row">
                                     <div class="col">
-                                      <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+                                      <input type="text" name="first_name" class="form-control" placeholder="First Name" 
+                                      {%if user.is_authenticated%} value={{user.first_name}} {%endif%} required>
                                     </div>
                                     <div class="col">
-                                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" 
+                                      {%if user.is_authenticated%} value={{user.last_name}} {%endif%} required>
                                     </div>
                                   </div>
                                 </div>
@@ -239,7 +257,7 @@
                                     </div>
                                 
                                 <div class="form-group">
-                                  <input type="text" name="car_title" class="form-control" value="LAMBORGHINI HURACÁN." readonly>
+                                  <input type="text" name="car_title" class="form-control" value="{{car_data.car_title}}" readonly>
                                 </div>
                                
                                 <div class="form-group">
@@ -258,7 +276,8 @@
                                   <div class="row">
                                     <div class="col">
                                         <label for="name" class="col-form-label">You can reach me by email at</label>
-                                      <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                      <input type="email" name="email" class="form-control" placeholder="Email Address" 
+                                      {% if user.is_authenticated %} value={{user.email}} {% else %} value="" {%endif%} required>
                                     </div>
                                     <div class="col">
                                         <label for="phone" class="col-form-label">or by phone at</label>
@@ -280,16 +299,16 @@
                     </div>
                     <!-- Question start -->
                     <div class="widget question">
-                        <h5 class="sidebar-title">Get a Question?</h5>
+                        <h5 class="sidebar-title">Got any Question?</h5>
                         <ul class="contact-info">
                             <li>
-                                <i class="flaticon-pin"></i>20/F Green Road, Dhanmondi
+                                <i class="flaticon-pin"></i>MCA, GVPCE, Visakhapatnam
                             </li>
                             <li>
-                                <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                <i class="flaticon-mail"></i><a href="{% url 'pages:contact'%}">contact@carzone.com</a>
                             </li>
                             <li>
-                                <i class="flaticon-phone"></i><a href="tel:+0477-85x6-552">+0477 85x6 552</a>
+                                <i class="flaticon-phone"></i><a href="tel:+91-63XX-922-5X5">+91-63XX-922-5X5</a>
                             </li>
                         </ul>
                         <div class="social-list clearfix">

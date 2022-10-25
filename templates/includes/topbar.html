@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-7">
                 <div class="list-inline">
-                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>+91-63XX-922-5X5</a>
-                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>venkateshnagumantri@gmail.com</a>
-                    <a href="tel:info@themevessel.com"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
+                    <a href="tel:+91-63XX-922-5X5"><i class="fa fa-phone"></i>+91-63XX-922-5X5</a>
+                    <a href="tel:venkateshnagumantri11@gmail.com"><i class="fa fa-envelope"></i>venkateshnagumantri11@gmail.com</a>
+                    <a href="tel:#"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-5">
@@ -15,7 +15,7 @@
                         <a href="{% url 'pages:dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-out"><i class="fa fa-sign-out"></i> Logout</a>
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
                         <form action = "{% url 'pages:logout' %}" id="logout" method="POST">
                             {% csrf_token %}
                             <input type="hidden">

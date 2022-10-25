@@ -8,7 +8,7 @@
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
-            <h1>Login To Your Account</h1>
+            <h1>Login Here</h1>
             <ul class="breadcrumbs">
                 <li><a href="{% url 'pages:home' %}">Home</a></li>
                 <li class="active">Login</li>
@@ -29,12 +29,13 @@
                             <img src="{% static 'img/logos/black-logo.png' %}" alt="logo">
                         </a>
                     </div>
+                    <br>
                     <h3>Sign into your account</h3>
                     {%include 'includes/messages.html'%}
                     <form action="{% url 'pages:login' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group form-box">
-                            <input type="text" name="username" class="input-text" placeholder="username" style="color:black !important;" required>
+                            <input type="text" name="field" class="input-text" placeholder="Enter username or email adress" style="color:black !important;" AutoFocus required>
                             <i class="flaticon-mail"></i>
                         </div>
                         <div class="form-group form-box">
@@ -45,12 +46,16 @@
                             <button type="submit" class="btn-md btn-theme float-left">Login</button>
                         </div>
                         <div class="extra-login clearfix">
-                            <span></span>
+                            <span>Or Login With</span>
                         </div>
                         <div class="clearfix"></div>
-                        
+                        <ul class="social-list" style="word-spacing:20px; !important" >
+                            <li><a href="{% url 'social:begin' 'facebook'  %}" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="{% url 'social:begin' 'google-oauth2' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+                            <li><a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="linkedin-bg"><i class="fa fa-linkedin linkedin-i"></i><span>Linkedin</span></a></li>
+                        </ul>
                     </form>
-                    <p>Don't have an account? <a href="{% url 'pages:register' %}" class="thembo"> Register here</a></p>
+                    <p>Don't have an account? <a href="{% url 'pages:register' %}" class="thembo"><b> Register here</b></a></p>
                 </div>
             </div>
         </div>

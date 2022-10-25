@@ -3,6 +3,10 @@ from .models import Team
 from cars.models import Car
 from django.contrib import messages,auth
 from django.contrib.auth.models import User
+from contacts.models import Contact
+from cars.models import Car
+from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -69,20 +73,67 @@ def  services(request):
     return render(request,'pages/services.html')
 
 def contact(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            email = request.POST['email']
+            subject = request.POST['subject']
+            phone = request.POST['phone']
+            message = request.POST['message']
+
+            #customizing the email
+            contact_subject = 'Some user is trying to contact you in carzone website regarding '+subject
+
+            message_body = 'Name: '+first_name+' '+last_name+'\nEmail Adress: '+email+'\nphone: '+phone+'\nmessage: '+message
+
+            #sending emails part
+            admin_emails = []
+            admin_info = User.objects.filter(is_superuser = True)
+            for item in admin_info:
+                admin_emails.append(item.email)
+
+            send_mail(
+                contact_subject,
+                message_body,
+                'developervenkatesh2001@gmail.com',
+                admin_emails,
+                fail_silently=False,
+            )
+
+            messages.success(request,"Thanks for contacting us. we will get back to you shortly.")
+            return redirect('pages:contact')
+        else:
+            messages.error(request,"You must be logged in before Contacting us!")
+            return redirect('pages:login')
+    
+    
     return render(request,'pages/contact.html')
 
 #for login and register activities#   
 def login(request):
     if request.method=='POST':
-        username=request.POST['username']
+        field=request.POST['field']
         password=request.POST['password']
+        user = auth.authenticate(username=field, password=password)
+        if user is not None:
+            auth.login(request,user)
+            messages.success(request,'You are now Logged in.')
+            return redirect('pages:dashboard')
+        try:
+            email_found = User.objects.get(email=field.lower())
+        except:
+            messages.error(request,'Invalid Login Credentials !')
+            return redirect('pages:login')
+
+        username = email_found.username
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request,user)
-            messages.success(request,'You are now Logged in !!!')
+            messages.success(request,'You are now Logged in.')
             return redirect('pages:dashboard')
         else:
-            messages.error(request,'entered username or password is incorrect !')
+            messages.error(request,'Invalid Login Credentials !')
             return redirect('pages:login')
     else:
         return render(request,'pages/login.html')
@@ -118,7 +169,14 @@ def register(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-    return redirect('pages:home')
+        messages.success(request,'You are successfully logged out !')
+    return redirect('pages:login')
 
+@login_required(login_url = 'pages:login')
 def dashboard(request):
-    return render(request,'pages/dashboard.html')
+    user_inquiry = Contact.objects.all().order_by('-created_date').filter(user_id = request.user.id)
+    data = {
+        'inquiries' : user_inquiry,
+        
+    }
+    return render(request,'pages/dashboard.html',context=data)

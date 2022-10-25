@@ -11,7 +11,7 @@
         <div class="breadcrumb-areas">
             <h1>Search Results</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'pages:home' %}">Home</a></li>
                 <li class="active">Search</li>
             </ul>
         </div>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents">
-                <form method="GET" action="{% url 'cars:search' %}">
+                <form method="GET" action="{% url 'pages:search' %}">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
@@ -91,7 +91,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <div class="range-slider">
-                                    <div data-min="0" data-max="90000000" data-unit="INR" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                    <div data-min="0" data-max="50000000" data-unit="INR" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="car-box">
                     <div class="car-thumbnail">
-                        <a href="car-details.html" class="car-img">
+                        <a href="{% url 'pages:car_detail' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
                             <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="width:260px; height:260px;">
                             <div class="facilities-list clearfix">
@@ -183,10 +183,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="{% url 'cars:car_detail' car.id %}">{{car.car_title}}</a>
+                            <a href="{% url 'pages:car_detail' car.id %}">{{car.car_title}}</a>
                         </h1>
                         <div class="location">
-                            <a href="{% url 'cars:car_detail' car.id %}">
+                            <a href="{% url 'pages:car_detail' car.id %}">
                                 <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
                             </a>
                         </div>
