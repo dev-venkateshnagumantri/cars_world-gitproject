@@ -189,4 +189,4 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'aYHAei7sF8edIcoE'
 
 #whitenoisesettings
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
