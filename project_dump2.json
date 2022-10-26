@@ -2503,60 +2503,7 @@
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\"]}}]"
     }
 },
-{
-    "model": "admin.logentry",
-    "pk": 77,
-    "fields": {
-        "action_time": "2022-10-18T15:22:55.764Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 78,
-    "fields": {
-        "action_time": "2022-10-18T15:23:00.892Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 2,
-        "change_message": "[]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 79,
-    "fields": {
-        "action_time": "2022-10-18T15:34:19.580Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 3,
-        "change_message": ""
-    }
-},
+
 {
     "model": "admin.logentry",
     "pk": 80,
