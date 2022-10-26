@@ -29,7 +29,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co','localhost']
+ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co']
 
 LOGIN_URL = 'pages:login'
 LOGOUT_URL = 'pages:logout'
