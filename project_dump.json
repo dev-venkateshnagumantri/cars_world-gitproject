@@ -731,7 +731,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$320000$UaWWsNboUq03BM1BOoQ2Ap$SuLC+yrHTj42AeJejVKDXJS1umaL95H7I6A5DqtINto=",
-        "last_login": "2022-10-23T13:25:25.812Z",
+        "last_login": "2022-10-26T04:20:18.014Z",
         "is_superuser": false,
         "username": "sowmyaji",
         "first_name": "sow",
@@ -1007,14 +1007,6 @@
     "fields": {
         "session_data": "eyJmYWNlYm9va19zdGF0ZSI6ImVySU54ZFFIMkd1R2Nkc1ZQMVFzc2VKQjJQcmFxVnpSIn0:1omark:H0fs1EU_BZeBT0mvHQlug2YZjRePvPfc-msbutynGcM",
         "expire_date": "2022-11-06T13:18:12.488Z"
-    }
-},
-{
-    "model": "sessions.session",
-    "pk": "z453g47m4yhi8zzst63oxjo5mtaw0qcy",
-    "fields": {
-        "session_data": ".eJxVjDsOwjAQBe_iGln-fyjpOYO1613hAHKkOKkQd4dIKaB9M_NeosC2trINXspE4iyMOP1uCPXBfQd0h36bZZ37ukwod0UedMjrTPy8HO7fQYPRvrVOAbO2yJGzVYoSx0hgslOOUwxWg7ehciB0nhQDR4gBiDVhNUp58f4A1wQ3-w:1onDYO:FdU_ZvW3EHwIfvaRUYU8UdLIZc9gamVbtgtOrxXHinQ",
-        "expire_date": "2022-11-08T06:36:48.536Z"
     }
 },
 {
