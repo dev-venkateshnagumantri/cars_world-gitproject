@@ -25,11 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y!0*4-hv1ie@uuqf&q9qybr%f(%p!fm_lt%5a=dzo)05#-z!8g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
-ALLOWED_HOSTS = ["thecarzone.herokuapp.com","thecarzoneapp.co","www.thecarzoneapp.co"]
+ALLOWED_HOSTS = []
 
 LOGIN_URL = 'pages:login'
 LOGOUT_URL = 'pages:logout'
@@ -189,4 +189,4 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'aYHAei7sF8edIcoE'
 
 #whitenoisesettings
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
