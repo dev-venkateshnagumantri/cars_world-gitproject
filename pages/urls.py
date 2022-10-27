@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     path('services/',views.services,name='services'),
     path('contact/',views.contact,name='contact'),
+    path('privacy/',views.privacy_policy,name='privacy'),
     #this is for searching and car_details
     path('<int:id>/',car_detail,name='car_detail'),
     path('search/',search,name='search'),

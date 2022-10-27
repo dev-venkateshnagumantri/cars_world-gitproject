@@ -72,6 +72,9 @@ def about(request):
 def  services(request):
     return render(request,'pages/services.html')
 
+def privacy_policy(request):
+    return render(request,'pages/privacy.html')
+
 def contact(request):
     if request.method == 'POST':
         if request.user.is_authenticated:

@@ -60,6 +60,11 @@
                             <input type="password" name="confirm_password" class="input-text" placeholder="Confirm Password" style="color:black !important;" required>
                             <i class="flaticon-lock"></i>
                         </div>
+                        <div class="form-group form-box">
+                        <p style="font-size:80%;">
+                            By clicking REGISTER, you agree to the Car Zone <a href="{% url 'pages:privacy' %}" target="_blank" style="color:blue;">Privacy Policy</a> and <a href="{% url 'pages:privacy' %}" target="_blank" style="color:blue;">Cookie Policy</a>.
+                        </p>
+                        </div>
                         <div class="form-group mb-0 clearfix"  >
                             <button type="submit" class="btn-md btn-theme float-left">Register</button>
                         </div>
@@ -73,7 +78,7 @@
                             <li><a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="linkedin-bg"><i class="fa fa-linkedin linkedin-i"></i><span>Linkedin</span></a></li>
                         </ul>
                     </form>
-                    <p>Already a member? <a href="{% url 'pages:login' %}" class="thembo"><b>Login here</b></a></p>
+                    <p>Already a member? <a href="{% url 'pages:login' %}" style="color:rgb(0,0,237) !important;" class="thembo"><b>Login here</b></a></p>
                 </div>
             </div>
         </div>
