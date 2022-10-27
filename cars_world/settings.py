@@ -89,12 +89,13 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.linkedin.LinkedinOAuth2',
 
 
-    'django.contrib.auth.backends.ModelBackend',
+    
 )
 
 WSGI_APPLICATION = 'cars_world.wsgi.application'
