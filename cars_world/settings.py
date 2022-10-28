@@ -29,7 +29,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co']
+ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co',]
 
 LOGIN_URL = 'pages:login'
 LOGOUT_URL = 'pages:logout'
@@ -179,8 +179,8 @@ EMAIL_HOST_USER = 'developervenkatesh2001@gmail.com'
 EMAIL_HOST_PASSWORD = 'jhivrufehbuzajce'
 EMAIL_USE_TLS = True
 
-SOCIAL_AUTH_FACEBOOK_KEY = '912353209741051'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'fcdbf230ecfa9a34d0327ac2921fa8c0'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '1151139092470010'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'aec737db052c535e90031b423c2d050a'  # App Secret
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '101928602587-h7dhm83ikehk6258joooa9nd46ei4ot5.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
@@ -190,4 +190,4 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'aYHAei7sF8edIcoE'
 
 #whitenoisesettings
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
