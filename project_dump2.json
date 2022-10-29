@@ -433,7 +433,7 @@
         "last_name": "sd",
         "car_id": 7,
         "customer_need": "I'm interested in this",
-        "car_title": "Lamborghini Huracán",
+        "car_title": "Lamborghini Huracï¿½n",
         "city": "sasa",
         "state": "sawws",
         "email": "w123@gmail.com",
@@ -451,7 +451,7 @@
         "last_name": "nagumantri",
         "car_id": 7,
         "customer_need": "I'd like to test drive this",
-        "car_title": "Lamborghini Huracán",
+        "car_title": "Lamborghini Huracï¿½n",
         "city": "eluru",
         "state": "Andhrapradesh",
         "email": "venkateshnagumantri@gmail.com",
@@ -487,7 +487,7 @@
         "last_name": "Nagumantri",
         "car_id": 7,
         "customer_need": "I'm interested in this",
-        "car_title": "Lamborghini Huracán",
+        "car_title": "Lamborghini Huracï¿½n",
         "city": "andhra",
         "state": "visakha",
         "email": "venkateshnagumantri01@gmail.com",
@@ -595,7 +595,7 @@
         "last_name": "Hastina",
         "car_id": 7,
         "customer_need": "I'm interested in this",
-        "car_title": "Lamborghini Huracán",
+        "car_title": "Lamborghini Huracï¿½n",
         "city": "Margao",
         "state": "goa",
         "email": "gandharihastina@gmail.com",
@@ -2336,7 +2336,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car title\"]}}]"
     }
@@ -2480,7 +2480,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo 1\", \"Car photo 2\", \"Car photo 3\", \"Car photo 4\"]}}]"
     }
@@ -2505,60 +2505,6 @@
 },
 {
     "model": "admin.logentry",
-    "pk": 77,
-    "fields": {
-        "action_time": "2022-10-18T15:22:55.764Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 78,
-    "fields": {
-        "action_time": "2022-10-18T15:23:00.892Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 2,
-        "change_message": "[]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 79,
-    "fields": {
-        "action_time": "2022-10-18T15:34:19.580Z",
-        "user": [
-            "venkatesh"
-        ],
-        "content_type": [
-            "socialaccount",
-            "socialapp"
-        ],
-        "object_id": "1",
-        "object_repr": "Facebook Login",
-        "action_flag": 3,
-        "change_message": ""
-    }
-},
-{
-    "model": "admin.logentry",
     "pk": 80,
     "fields": {
         "action_time": "2022-10-18T16:26:21.510Z",
@@ -2570,7 +2516,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\"]}}]"
     }
@@ -2678,7 +2624,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\"]}}]"
     }
@@ -2696,7 +2642,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\", \"Car photo 1\", \"Car photo 4\"]}}]"
     }
@@ -2714,7 +2660,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\", \"Car photo 1\", \"Car photo 2\", \"Car photo 3\", \"Car photo 4\"]}}]"
     }
@@ -3092,7 +3038,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\"]}}]"
     }
@@ -3110,7 +3056,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Car photo\"]}}]"
     }
@@ -3344,7 +3290,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
     }
@@ -3452,7 +3398,7 @@
             "car"
         ],
         "object_id": "7",
-        "object_repr": "Lamborghini Huracán",
+        "object_repr": "Lamborghini Huracï¿½n",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
     }
