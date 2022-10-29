@@ -644,7 +644,7 @@
         "first_name": "Martin",
         "last_name": "Smith",
         "designation": "Web Developer",
-        "photo": "Photos/2022/07/12/avatar-12.jpg",
+        "photo": "https://res.cloudinary.com/dthrflf1k/image/upload/v1667059168/avatar-12_qftpzt.jpg",
         "linkedin_link": "https://linkedin.com",
         "twitter_link": "https://twitter.com",
         "google_plus_link": "https://google.com",
