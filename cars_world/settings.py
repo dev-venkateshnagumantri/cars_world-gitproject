@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y!0*4-hv1ie@uuqf&q9qybr%f(%p!fm_lt%5a=dzo)05#-z!8g'
+SECRET_KEY = '**************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -178,25 +178,25 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'developervenkatesh2001@gmail.com'
-EMAIL_HOST_PASSWORD = 'jhivrufehbuzajce'
+EMAIL_HOST_PASSWORD = '********************************'
 EMAIL_USE_TLS = True
 
-SOCIAL_AUTH_FACEBOOK_KEY = '912353209741051'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'fcdbf230ecfa9a34d0327ac2921fa8c0'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '*****************'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '*******************'  # App Secret
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '101928602587-h7dhm83ikehk6258joooa9nd46ei4ot5.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '******************************'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '*********************************'
 
 
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'aYHAei7sF8edIcoE'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '***************'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = '***************'
 
 #whitenoisesettings
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 cloudinary.config( 
   cloud_name = "dthrflf1k", 
-  api_key = "532323486532835", 
-  api_secret = "Q6CjwQko-Y4lLcOozVun71_q5rs",
+  api_key = "*******************", 
+  api_secret = "************************",
   secure = True
 )
