@@ -24,6 +24,7 @@ urlpatterns = [
     path('cars/',include('cars.urls')),
     path('contacts/',include('contacts.urls')),
     path('oauth2/', include('social_django.urls', namespace='social')),
+    path("404/", views.custom_page_not_found),
 
 
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
