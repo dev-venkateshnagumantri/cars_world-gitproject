@@ -16,6 +16,7 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +32,7 @@ SECRET_KEY = 'django-insecure-y!0*4-hv1ie@uuqf&q9qybr%f(%p!fm_lt%5a=dzo)05#-z!8g
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co']
+ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co','localhost']
 
 LOGIN_URL = 'pages:login'
 LOGOUT_URL = 'pages:logout'
@@ -153,11 +154,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'cars_world/static'),
     
 ]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
