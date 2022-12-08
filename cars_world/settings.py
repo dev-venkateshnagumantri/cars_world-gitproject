@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-y!0*4-hv1ie@uuqf&q9qybr%f(%p!fm_lt%5a=dzo)05#-z!8g
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['thecarzone.herokuapp.com','thecarzone.co','www.thecarzone.co','localhost']
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = 'pages:login'
 LOGOUT_URL = 'pages:logout'
