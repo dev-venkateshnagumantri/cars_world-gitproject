@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'cars_world.wsgi.application'
 #}
 
 #DATABASES = {'default':dj_database_url.config(default = 'postgres://postgres:admin@localhost/carworld_db')}
-DATABASES['default'] = dj_database_url.config("postgresql://postgres:JbWABfpfkttfSBjrJEhP@containers-us-west-155.railway.app:7349/railway")
+#DATABASES['default'] = dj_database_url.config("postgresql://postgres:JbWABfpfkttfSBjrJEhP@containers-us-west-155.railway.app:7349/railway")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
