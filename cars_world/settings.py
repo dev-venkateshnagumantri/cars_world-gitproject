@@ -177,22 +177,7 @@ MESSAGE_TAGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#sending email#
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'developervenkatesh2001@gmail.com'
-EMAIL_HOST_PASSWORD = '******************'
-EMAIL_USE_TLS = True
 
-SOCIAL_AUTH_FACEBOOK_KEY = '912353209741051'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '******************'  # App Secret
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '101928602587-h7dhm83ikehk6258joooa9nd46ei4ot5.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '******************'
-
-
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '866gdeoobbeday'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = '***********'
 
 #whitenoisesettings
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
