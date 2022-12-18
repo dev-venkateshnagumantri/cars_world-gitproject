@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn cars_world.wsgi
+web: gunicorn cars_world.wsgi --log-file -
